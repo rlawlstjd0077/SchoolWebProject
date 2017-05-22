@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <ul id="myList">
+      <li>Coffee</li> <li>Tea</li>
+    </ul>
+    <input id="inputField" type="text"/>
+    <button onclick="add()">Add</button>
+    <button onclick="remove()">Remove</button>
+    <script>
+      function add(){
+        var node = document.createElement("li");
+        var textnode = document.createTextNode(document.getElementById("inputField").value);
+        node.appendChild(textnode);
+        document.getElementById("myList").appendChild(node);
+      }
+      function remove(){
+        var node = document.getElementsByTagName("li");
+        var text = document.getElementById("inputField").value;
+        var parent = document.getElementById("myList");
+        for(var i = 0; i < node.length; i++){
+          var tmp = node[i].innerText;
+          if(tmp == text){
+              parent.removeChild(node[i]);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .main{
+        text-align: center;
+      }
+    </style>
+    <script>
+      var guessCount;
+      var ranNum;
+      function startGame(){
+          guessCount = 0;
+          document.getElementById("inputField").value = "";
+          document.getElementById("guessField").value = "";
+          document.getElementById("hintField").value = "";
+          ranNum = parseInt((Math.random() * 99) + 1);
+      }
+      function doGuess(){
+        var guessVal = document.getElementById("inputField").value
+        if(!(parseInt(guessVal) == ranNum)){
+          document.getElementById("hintField").value = parseInt(guessVal) < ranNum ? "Up" : "Down";
+        } else{
+          document.getElementById("resultField").style.visibility = "visible";
+        }
+        document.getElementById("guessField").value = ++guessCount;
+      }
+    </script>
+  </head>
+  <body>
+    <fieldset class="main">
+      <input type="button" value="시작" style="width : 140px;" onclick="startGame()"/><br>
+      <legend>숫자 맞히기 게임</legend>
+      <label>숫자 : <input id="inputField" type="text"></label>
+      <input  type="button" value="확인" style="width : 140px;" onclick="doGuess()"/><br>
+      <label>추측횟수 : <input id="guessField" type="text"></label>
+      <label>힌트 : <input id="hintField" type="text"></label>
+      <label id="resultField" style="visibility : hidden">맞췄습니다 ! </label>
+    </fieldset>
+  </body>
+</html>

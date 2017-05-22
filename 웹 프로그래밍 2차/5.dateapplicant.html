@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      var state = true;
+      var second = 0;
+      var startState = false;
+      
+      function checkerStart(){
+        if(state){
+          state = false;
+          document.body.style.backgroundColor = "red";
+          startState = true;
+          timer();
+        }else{
+          state = true;
+          document.body.style.backgroundColor = "white";
+          startState = false;
+          timer();
+        }
+      }
+
+      function timer(){
+          if(startState){
+            check();
+            setTimeout("timer(true)", 1000);
+          }else{
+
+          }
+      }
+
+      function check(){
+        console.log(second);
+        second++;
+      }
+    </script>
+  </head>
+  <body onkeypress="checkerStart()">
+
+  </body>
+</html>

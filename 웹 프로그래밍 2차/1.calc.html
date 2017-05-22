@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      function log10(x) {
+        return Math.log(x) / Math.log(10);
+      }
+      function calc(){
+        var x = document.getElementById("x").value;
+        var y = document.getElementById("y").value;
+        var sum;
+        switch(event.target.value){
+          case "+":
+            sum = parseInt(x) + parseInt(y);
+            break;
+          case "-":
+            sum = parseInt(x) - parseInt(y);
+            break;
+          case "/":
+            sum = parseInt(x) / parseInt(y);
+            break;
+          case "x":
+            sum = parseInt(x) * parseInt(y);
+            break;
+          case "√":
+            sum = Math.sqrt(parseInt(x)) + ", " + Math.sqrt(parseInt(y));
+          case "log10":
+            sum = log10(parseInt(x)) + ", " +  log10(parseInt(y)); 
+        }
+        document.getElementById("sum").value = sum;
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="x" />
+    <input type="text" id="y" />
+    <input type="button" onclick="calc()" value="+"/>
+    <input type="button" onclick="calc()" value="-"/>
+    <input type="button" onclick="calc()" value="/"/>
+    <input type="button" onclick="calc()" value="x"/>
+    <input type="button" onclick="calc()" value="√"/>
+    <input type="button" onclick="calc()" value="log10"/>
+
+    <input type="text" id="sum" />
+  </body>
+</html>

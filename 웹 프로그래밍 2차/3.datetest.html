@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      var currentDate;
+      var daySeconds = 86400;
+      function init(){
+        var date = new Date();
+        currentDate = date;
+        document.getElementById("curDate").innerText = "current Date : " + date.getFullYear() + " - " + parseInt(date.getMonth() + 1) + " - " + date.getDate();
+      }
+      function getDday(){
+        var date = new Date(document.getElementById("inputField").value);
+        var gap = currentDate.getTime() - date.getTime();
+        document.getElementById("result").innerText  = Math.floor(gap / (1000 * 60 * 60 * 24)) * -1 + " days left";
+      }
+    </script>
+  </head>
+  <body onload="init()">
+    <div id="curDate">dasdas</div>
+    <input type="date" id="inputField" />
+    <input type="button" value="submit" onclick="getDday()"/>
+    <div id="result"></div>
+  </body>
+</html>

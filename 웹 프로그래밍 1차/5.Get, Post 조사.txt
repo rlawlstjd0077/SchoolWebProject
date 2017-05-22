@@ -1,0 +1,5 @@
+- GET, POST의 근본적인 특성 차이는 GET은 idempotent, POST는 non-idempotent 하다는 점이다.
+- GET 요청은 브라우저에서 캐시를 할 수 있다.
+- POST의 경우 GET과는 달리 쿼리스트링(query string)의 글자 수 제약이 없으며, 파일업로드 등의 동작이 가능하다.
+- 그리고 POST의 경우 쿼리스트링이 URL에 포함되지 않기때문에 user에게 파라메터 값 등을 덜 노출한 상태로 요청이 가능하다.
+- POST는 form submit하여 키와 값을 보내는 형태
